@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  background: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.front img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 25px;
+}
+
+.category {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.content h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.like-btn,
+.explore-btn,
+.back button {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.like-btn {
+  background: #f1f1f1;
+}
+
+.like-btn.active {
+  background: #ff4d6d;
+  color: white;
+}
+
+.explore-btn {
+  background: #3498db;
+  color: white;
+}
+
+.explore-btn:hover,
+.back button:hover {
+  transform: translateY(-3px);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back h2 {
+  margin-bottom: 20px;
+}
+
+.back ul {
+  list-style: none;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.back button {
+  background: white;
+  color: #1d2b64;
+  font-weight: bold;
+}
