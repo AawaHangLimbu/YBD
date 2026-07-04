@@ -1,0 +1,48 @@
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -5%;
+  border-radius: 70% 0 70% 0;
+  opacity: 0;
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.petal--lavender {
+  background: linear-gradient(135deg, #cdb9da, #9a7daf);
+}
+
+.petal--sage {
+  background: linear-gradient(135deg, #a3b399, #8a9a7e);
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  92% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(108vh) translateX(var(--drift)) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    display: none;
+  }
+}
