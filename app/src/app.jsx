@@ -34,4 +34,32 @@ function App() {
         </section>
       )}
 
-     
+      {showLetter && (
+        <main className="letter">
+          <section className="letter__header">
+            <p className="letter__eyebrow">a letter for</p>
+            <h1 className="letter__title">{friendName}</h1>
+            <p className="letter__opening">{openingLine}</p>
+          </section>
+
+          <section className="letter__section">
+            <h2 className="letter__heading">moments</h2>
+            <Gallery photos={photos} />
+          </section>
+
+          <section className="letter__section">
+            <h2 className="letter__heading">a few things I wanted to say</h2>
+            <MemoryCards memories={memories} />
+          </section>
+
+          <section className="letter__closing">
+            <p className="letter__closing-message">{closingMessage}</p>
+            <p className="letter__signature">{signature}</p>
+          </section>
+        </main>
+      )}
+    </div>
+  );
+}
+
+export default App;
